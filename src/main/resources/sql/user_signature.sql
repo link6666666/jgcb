@@ -1,0 +1,1 @@
+ALTER TABLE `sys_user` ADD COLUMN `signature` VARCHAR(100) DEFAULT NULL COMMENT '个性签名';

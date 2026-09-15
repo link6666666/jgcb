@@ -1,0 +1,73 @@
+/* Shared visual polish and small-screen usability. */
+:root {
+  --bg-page: #f5f6fa;
+  --text-muted: #68778d;
+  --radius: 16px;
+  --shadow-xs: 0 2px 8px rgba(30, 41, 59, .035);
+}
+button, input, select, textarea { font-family: inherit; }
+button, a, select { -webkit-tap-highlight-color: transparent; }
+:where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--primary-light);
+  outline-offset: 3px;
+}
+.main-content { min-width: 0; }
+.page-content { padding: 32px; }
+.sidebar-header { padding: 24px 20px; }
+.sidebar-nav { overscroll-behavior: contain; }
+.nav-section { display: block; margin-top: 12px; }
+.nav-item { margin-bottom: 4px; }
+.sidebar-footer .logout { cursor: pointer; }
+.welcome-card {
+  padding: 40px;
+  border-radius: 22px;
+  background: radial-gradient(ellipse at top right, #9294ef 0%, transparent 65%), linear-gradient(120deg, #4338a4, #6366d9);
+  box-shadow: 0 12px 32px rgba(79, 70, 160, .14);
+}
+.welcome-card h1 { font-size: clamp(22px, 2.6vw, 32px); overflow-wrap: anywhere; }
+.welcome-card p { margin-top: 10px; opacity: .95; }
+.dashboard-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.dash-card { padding: 24px; text-align: left; min-width: 0; }
+.dash-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 56px; height: 56px; font-size: 28px; border-radius: 16px;
+  background: var(--primary-bg); margin-bottom: 18px;
+}
+.dash-card:nth-child(3n + 2) .dash-icon { background: #ecf7f1; }
+.dash-card:nth-child(3n) .dash-icon { background: #fff5e7; }
+.dash-label, .dash-sub { display: block; }
+.dash-label { font-size: 16px; }
+.dash-sub { line-height: 1.65; margin-top: 6px; }
+.publish-card, .profile-card, .session-card, .member-card { border-color: var(--border); }
+input, select, textarea { max-width: 100%; min-width: 0; }
+textarea { resize: vertical; }
+.form-item input, .form-item select, .profile-input { min-height: 44px; }
+.travel-date-input { min-width: 0; }
+.detail-row > span { min-width: 0; overflow-wrap: anywhere; }
+.empty-tip { border: 1px dashed var(--border); border-radius: 16px; background: var(--bg-card); }
+@media (min-width: 769px) and (max-width: 1100px) {
+  .dashboard-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page-content { padding: 24px; }
+}
+@media (max-width: 768px) {
+  .main-content:not(.no-sidebar) { padding-top: 64px; }
+  .sidebar-toggle { width: 44px; height: 44px; top: 10px; }
+  .sidebar.open .sidebar-header { padding-left: 68px; min-height: 68px; }
+  .page-content { padding: 16px 16px 32px; }
+  .dashboard-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .dash-card { padding: 18px 14px; }
+  .dash-icon { width: 46px; height: 46px; margin-bottom: 14px; }
+  .welcome-card { padding: 26px 22px; border-radius: 18px; margin-bottom: 24px; }
+  .travel-date-row { display: grid; grid-template-columns: auto minmax(0, 1fr); }
+  input, select, textarea { font-size: 16px; }
+  .comment-input { min-width: 0; }
+  .comment-delete { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

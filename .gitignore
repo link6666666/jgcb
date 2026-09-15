@@ -1,0 +1,37 @@
+# Dependencies and build output
+node_modules/
+target/
+dist/
+BOOT-INF/
+*.jar
+*.zip
+/src/main/resources/static/
+
+# Runtime data and local backups
+logs/
+uploads/
+*.log
+*.pid
+*.bak
+*backup*/
+*backup*.vue
+/vm-deploy-*/
+
+# Local configuration and credentials
+/src/main/resources/application.yml
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Editor and agent state
+.idea/
+.vscode/
+.claude/
+.codex/
+.agents/
+*.iml
+.DS_Store
+Thumbs.db
+__pycache__/
