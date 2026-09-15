@@ -35,9 +35,6 @@
         <router-link to="/pet" class="nav-item" @click="closeSidebar">
           <span class="nav-icon">🐾</span> 我的糍粑
         </router-link>
-        <router-link to="/room" class="nav-item" @click="closeSidebar">
-          <span class="nav-icon">🛖</span> 多人小屋
-        </router-link>
 
         <span class="nav-section">活动</span>
         <router-link to="/travel" class="nav-item" @click="closeSidebar">
@@ -95,11 +92,11 @@ const sidebarOpen = ref(false)
 const user = ref({})
 
 const showSidebar = computed(() => {
-  return !['/login', '/register', '/room'].includes(route.path)
+  return !['/login', '/register'].includes(route.path)
 })
 
 const showPet = computed(() => {
-  return !['/login', '/register', '/room'].includes(route.path)
+  return !['/login', '/register'].includes(route.path)
 })
 
 const userLevel = computed(() => {

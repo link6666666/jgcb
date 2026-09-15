@@ -1,6 +1,6 @@
 # JGCB
 
-基于 Spring Boot 3、Java 17、MySQL 和 Vue 3 的管理与互动应用，包含用户、签到、活动、回忆录、宠物和多人房间功能。
+基于 Spring Boot 3、Java 17、MySQL 和 Vue 3 的管理与互动应用，包含用户、签到、活动、回忆录和宠物功能。
 
 ## 目录
 

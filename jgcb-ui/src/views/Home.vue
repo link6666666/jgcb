@@ -12,11 +12,6 @@
         <span class="dash-label">成员列表</span>
         <span class="dash-sub">查看所有成员</span>
       </router-link>
-      <router-link to="/room" class="dash-card">
-        <span class="dash-icon">🛖</span>
-        <span class="dash-label">多人小屋</span>
-        <span class="dash-sub">和大家在小屋里见面</span>
-      </router-link>
       <router-link to="/travel" class="dash-card">
         <span class="dash-icon">✈️</span>
         <span class="dash-label">旅游</span>

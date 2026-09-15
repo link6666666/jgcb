@@ -83,12 +83,6 @@ const routes = [
     name: 'Pet',
     component: () => import('../views/Pet.vue'),
     meta: { requiresAuth: true }
-  },
-  {
-    path: '/room',
-    name: 'Room',
-    component: () => import('../views/Room.vue'),
-    meta: { requiresAuth: true }
   }
 ]
 

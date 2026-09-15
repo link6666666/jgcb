@@ -1,8 +1,7 @@
 import axios from 'axios'
-import { backendHttpOrigin } from '../utils/runtime'
 
 const request = axios.create({
-  baseURL: backendHttpOrigin() + '/api',
+  baseURL: '/api',
   timeout: 10000
 })
 
@@ -288,20 +287,4 @@ export function getPetStatusOf(userId) {
 
 export function updatePetOutfit(data) {
   return request.put('/pet/outfit', data)
-}
-
-export function getRoom(roomId = 1) {
-  return request.get(`/rooms/${roomId}`)
-}
-
-export function getRoomPlayers(roomId = 1) {
-  return request.get(`/rooms/${roomId}/players`)
-}
-
-export function saveRoomPlayerState(roomId, data) {
-  return request.put(`/rooms/${roomId}/players/me/state`, data)
-}
-
-export function saveRoomObjectState(roomId, objectId, data) {
-  return request.put(`/rooms/${roomId}/objects/${objectId}/state`, data)
 }
